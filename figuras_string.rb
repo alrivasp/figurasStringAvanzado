@@ -38,30 +38,18 @@ end
 #metodo dibujar piramide
 def method_piramide numero
     result = ""
-    for i in (1..numero)
-        for b in (1..numero) 
-            if b <= i
-                result += "*"
-            else
-                result += " "
-            end
-        end        
+    numero.times do |i|
+        i.times do 
+            result += "*"
+        end 
         result += "\n"
-    end
-    mod = numero
-    for i in (1..(numero-1))        
-        imp = 1
-        for b in (1..(numero-1)) 
-            if b%mod == imp
-                result += "*"
-            else
-                result += " "
-            end
-            imp += 1
-        end        
+    end 
+    numero.times do |i|
+        (numero-i).times do |j|
+            result += "*"
+        end
         result += "\n"
-        mod -= 1        
-    end
+    end    
     result
 end
 
